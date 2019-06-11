@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { LoginService } from './common/login.service';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment'; 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +16,8 @@ import { LoginService } from './common/login.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,FormsModule
+    ReactiveFormsModule,FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
